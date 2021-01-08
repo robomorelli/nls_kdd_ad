@@ -43,6 +43,8 @@ def main():
     valloader = torch.utils.data.DataLoader(valx, batch_size=batch_size, shuffle=True)
     
     ####initialize model####
+    
+    input_size = trainx.shape[1]
     vae = VAE(input_size, hidden_size
           , latent_dim, Nf_lognorm, Nf_binomial).to(device)
     
@@ -107,7 +109,6 @@ if __name__ == "__main__":
     
     batch_size = 400
     
-    input_size = trainx.shape[1]
     hidden_size = 20
     latent_size = 4
     act_fun = 'relu'
