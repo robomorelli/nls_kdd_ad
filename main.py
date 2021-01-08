@@ -46,7 +46,8 @@ def main():
     ####initialize model####
     input_size = trainx.shape[1]
     Nf_binomial = input_size-Nf_lognorm
-
+    
+   
     vae = VAE(input_size, hidden_size
           , latent_dim, Nf_lognorm, Nf_binomial).to(device)
     
