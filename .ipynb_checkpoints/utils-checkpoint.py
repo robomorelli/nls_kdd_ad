@@ -1,9 +1,8 @@
 import pandas as pd
 import numpy as np
-import uproot
 import os
 import random
-from subprocess import check_output
+# from subprocess import check_output
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 # from config import *
