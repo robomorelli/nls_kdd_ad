@@ -1,0 +1,39 @@
+Sender: LSF System <lsfadmin@hpc-201-11-40>
+Subject: Job 403917: </home/HPC/rmorellihpc/run_nls_kdd.sh > std.out 2>&1> in cluster <t1lsf> Exited
+
+Job </home/HPC/rmorellihpc/run_nls_kdd.sh > std.out 2>&1> was submitted from host <ui-hpc> by user <rmorellihpc> in cluster <t1lsf>.
+Job was executed on host(s) <hpc-201-11-40>, in queue <hpc_gpuV100>, as user <rmorellihpc> in cluster <t1lsf>.
+</home/HPC/rmorellihpc> was used as the home directory.
+</storage/gpfs_maestro/hpc/user/rmorellihpc/nls_kdd_ad> was used as the working directory.
+Started at Fri Jan  8 12:30:33 2021
+Results reported on Fri Jan  8 12:30:42 2021
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+/home/HPC/rmorellihpc/run_nls_kdd.sh > std.out 2>&1
+------------------------------------------------------------
+
+Exited with exit code 1.
+
+Resource usage summary:
+
+    CPU time :                                   1.17 sec.
+    Max Memory :                                 20 MB
+    Average Memory :                             1.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Processes :                              6
+    Max Threads :                                7
+    Run time :                                   7 sec.
+    Turnaround time :                            10 sec.
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <train.err> for stderr output of this job.
+

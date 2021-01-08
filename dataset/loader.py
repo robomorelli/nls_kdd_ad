@@ -5,7 +5,7 @@ import random
 # from subprocess import check_output
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
-# from config import *
+from config import *
 
 def _get_dataset(scale):
     """ Gets the basic dataset
@@ -74,7 +74,7 @@ def _get_dataset(scale):
 
 def get_train_val(val_split = 0.2, cols=None, cat_cols=None, ohe=None, exclude_cat=False, preprocessing = None):
 
-    df_all = pd.read_csv("all_kdd_dataset/KDDTrain+.txt", header=None, names=cols)
+    df_all = pd.read_csv(dataset_path + "KDDTrain+.txt", header=None, names=cols)
     cont_cols = [x for x in cols if x not in cat_cols]
     
     if preprocessing == 'log':
@@ -110,9 +110,8 @@ def get_train_val(val_split = 0.2, cols=None, cat_cols=None, ohe=None, exclude_c
 
 def get_test(cols=None, cat_cols=None, ohe=None, exclude_cat=False, preprocessing = None):
 
-    df_all = pd.read_csv("all_kdd_dataset/KDDTest+.txt", header=None, names=cols)
+    df_all = pd.read_csv(dataset_path + "/KDDTest+.txt", header=None, names=cols)
     cont_cols = [x for x in cols if x not in cat_cols]
-    
     if preprocessing == 'log':
         for c in cont_cols:
 #             print(c)

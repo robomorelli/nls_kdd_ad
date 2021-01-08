@@ -17,14 +17,14 @@ if 'cnaf' in o:
         o = o.stdout
         o = o.strip().decode('utf-8')
         # root = o + '/cell_counting_yellow/'
-        root = '/storage/gpfs_maestro/hpc/user/rmorellihpc/nls_kdd/'
+        root = '/storage/gpfs_maestro/hpc/user/rmorellihpc/nls_kdd_ad/'
     except:
         o = subprocess.run(["pwd"],  stdout=PIPE, stderr=PIPE)
         o = o.stdout
         o = o.strip().decode('utf-8')
         # root = o
         # root = o + '/cell_counting_yellow/'
-        root = '/storage/gpfs_maestro/hpc/user/rmorellihpc/nls_kdd/'
+        root = '/storage/gpfs_maestro/hpc/user/rmorellihpc/nls_kdd_ad/'
 else:
     root = ''
 
@@ -43,3 +43,4 @@ cat_cols = ['protocol_type', 'service', 'flag', 'land', 'logged_in', 'is_host_lo
 cont_cols = [x for x in cols if x not in cat_cols]
 
 model_results_path = root +  'model_results/'
+dataset_path = root + 'all_kdd_dataset/'
