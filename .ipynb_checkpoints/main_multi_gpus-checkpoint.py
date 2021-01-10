@@ -30,8 +30,8 @@ def main():
     cuda = torch.cuda.is_available()
     device = torch.device("cuda" if cuda else "cpu")
     if cuda:
-        print('added visible gpu')
         ngpus = torch.cuda.device_count()
+        print('added visible gpu {}'.format(ngpus))
  
     #####Load data#########
     trainx, valx, ohe = get_train_val(0.2, cols, cat_cols, preprocessing = 'log')
@@ -44,9 +44,11 @@ def main():
     input_size = trainx.shape[1]
     Nf_binomial = input_size-Nf_lognorm
     
-   
-    vae = VAE(input_size, hidden_size
-          , latent_dim, Nf_lognorm, Nf_binomial).to(device)
+#     vae = VAE(input_size, hidden_size
+#           , latent_dim, Nf_lognorm, Nf_binomial).to(device)
+    
+    vae = nn.DataParallel(VAE(input_size, hidden_size
+          , latent_dim, Nf_lognorm, Nf_binomial)).to(device)
     
     optimizer = optim.Adam(vae.parameters(), lr=lr)
     
